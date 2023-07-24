@@ -18,6 +18,15 @@
 - 🎇 &nbsp; All plotly.js methods and events
 - 🗾 &nbsp; Auto redraw on screensize changes and props update
 - 🚀 &nbsp; Data reactivity
+- 🏝️ &nbsp; TypeScript support
+
+## Require client-side
+
+- run with .client.vue file
+
+- run with `<client-only>` tag
+
+- 🚀 &nbsp; [See Example](/playground/app.vue)
 
 ## Quick Setup
 
