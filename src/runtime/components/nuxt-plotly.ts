@@ -11,16 +11,20 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import Plotly from "plotly.js-dist-min";
 
+export type NuxtPlotlyData = Array<Plotly.Data>;
+export type NuxtPlotlyConfig = Partial<Plotly.Config>;
+export type NuxtPlotlyLayout = Partial<Plotly.Layout>;
+
 export default defineComponent({
   props: {
-    data: { type: Array<Plotly.Data>, required: true },
+    data: { type: Array as PropType<NuxtPlotlyData>, required: true },
     config: {
-      type: Object as PropType<Plotly.Config>,
+      type: Object as PropType<NuxtPlotlyConfig>,
       required: false,
       default: undefined,
     },
     layout: {
-      type: Object as PropType<Plotly.Layout>,
+      type: Object as PropType<NuxtPlotlyLayout>,
       required: false,
       default: undefined,
     },

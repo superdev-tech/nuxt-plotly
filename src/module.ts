@@ -18,10 +18,6 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    if (process.server) {
-      console.log("No work in server");
-    }
-
     // Add component
     addComponent({
       name: "NuxtPlotly",
