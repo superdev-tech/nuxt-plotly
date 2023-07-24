@@ -20,6 +20,14 @@
 - 🚀 &nbsp; Data reactivity
 - 🏝️ &nbsp; TypeScript support
 
+## Require client-side
+
+- run with .client.vue file
+
+- run with `<client-only>` tag
+
+- 🚀 &nbsp; [See Example](/playground/app.vue)
+
 ## Quick Setup
 
 1. Add `nuxt-plotly` dependency to your project
