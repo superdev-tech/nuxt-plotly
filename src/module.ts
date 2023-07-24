@@ -1,10 +1,12 @@
 import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
 import { name, version } from "../package.json";
+export type {
+  NuxtPlotlyData,
+  NuxtPlotlyConfig,
+  NuxtPlotlyLayout,
+} from "./runtime/components/nuxt-plotly";
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
     name,
     version,
@@ -14,7 +16,6 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   // Default configuration options of the Nuxt module
-  defaults: () => ({}),
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
