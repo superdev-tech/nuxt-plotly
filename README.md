@@ -18,6 +18,7 @@
 - 🎇 &nbsp; All plotly.js methods and events
 - 🗾 &nbsp; Auto redraw on screensize changes and props update
 - 🚀 &nbsp; Data reactivity
+- 🏝️ &nbsp; TypeScript support
 
 ## Quick Setup
 
