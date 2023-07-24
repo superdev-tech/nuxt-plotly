@@ -6,7 +6,7 @@
       <nuxt-plotly
         :data="data"
         :layout="layout"
-        :config="{ scrollZoom: true, displayModeBar: false }"
+        :config="config"
         style="width: 100%"
       ></nuxt-plotly>
     </client-only>
@@ -14,25 +14,35 @@
   </div>
 </template>
 
-<script setup>
-const trace1 = {
-  type: "scatter",
-  mode: "lines",
-  x: ["2018-01-01", "2018-08-31"],
-  y: [10, 5],
-  line: { color: "#17BECF" },
-};
+<script setup lang="ts">
+import {
+  NuxtPlotlyConfig,
+  NuxtPlotlyData,
+  NuxtPlotlyLayout,
+} from "../src/module";
 
-const trace2 = {
-  type: "scatter",
-  mode: "lines",
-  x: ["2018-01-01", "2018-08-31"],
-  y: [3, 7],
-  line: { color: "#7F7F7F" },
-};
+// When you install the nuxt-plotly module please use the following syntax
+// import { NuxtPlotlyConfig, NuxtPlotlyData, NuxtPlotlyLayout } from 'nuxt-plotly'
 
-const data = [trace1, trace2];
-const layout = {
+const data: NuxtPlotlyData = [
+  {
+    type: "scatter",
+    mode: "lines",
+    x: ["2018-01-01", "2018-08-31"],
+    y: [10, 5],
+    line: { color: "#17BECF" },
+  },
+  {
+    type: "scatter",
+    mode: "lines",
+    x: ["2018-01-01", "2018-08-31"],
+    y: [3, 7],
+    line: { color: "#7F7F7F" },
+  },
+];
+const layout: NuxtPlotlyLayout = {
   title: "My graph on app.vue with <client-only>",
 };
+
+const config: NuxtPlotlyConfig = { scrollZoom: true, displayModeBar: false };
 </script>

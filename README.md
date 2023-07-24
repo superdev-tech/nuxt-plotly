@@ -8,8 +8,8 @@
 📊 `nuxt-plotly` module is thin Nuxt3 wrapper for [plotly.js](https://plotly.com/javascript/)
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-plotly?file=playground%2Fapp.vue) -->
-  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [🏀 Online playground](https://stackblitz.com/edit/nuxt-starter-1bs1ke?file=app.vue)
+- [📖 &nbsp;Plotly Documentation](https://plotly.com/javascript/plotly-fundamentals/)
 
 ## Features
 
@@ -22,11 +22,24 @@
 
 ## Require client-side
 
-- run with .client.vue file
+There are two ways to use the `nuxt-plotly` module on the client-side in Nuxt3:
 
-- run with `<client-only>` tag
+1. Wrap the component with the `<client-only>` tag.
 
-- 🚀 &nbsp; [See Example](/playground/app.vue)
+```html
+<client-only>
+  <nuxt-plotly
+    :data="pieChart.data"
+    :layout="pieChart.layout"
+    :config="pieChart.config"
+    style="width: 100%"
+  ></nuxt-plotly>
+</client-only>
+```
+
+2. Create a file with the `.client.vue` extension, for example, `PlotlyPieChart.client.vue` and then you can use the component without the `<client-only>` tag.
+
+- 🎯 &nbsp; [See Example](/playground/app.vue)
 
 ## Quick Setup
 
@@ -51,9 +64,21 @@ export default defineNuxtConfig({
 });
 ```
 
+3. Add `plotly.js-dist-min` to the `vite.optimizeDeps.include` section of `nuxt.config.ts`
+
+```js
+export default defineNuxtConfig({
+  vite: {
+    optimizeDeps: {
+      include: ["plotly.js-dist-min"],
+    },
+  },
+});
+```
+
 That's it! You can now use Nuxt Plotly Module in your Nuxt app ✨
 
-## Development
+## Development: If you want to contribute
 
 ```bash
 # Install dependencies
