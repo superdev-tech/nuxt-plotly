@@ -4,6 +4,7 @@ export type {
   NuxtPlotlyData,
   NuxtPlotlyConfig,
   NuxtPlotlyLayout,
+  NuxtPlotlyHTMLElement,
 } from "./runtime/components/nuxt-plotly";
 
 export default defineNuxtModule({
@@ -15,8 +16,7 @@ export default defineNuxtModule({
       nuxt: "^3.6.0",
     },
   },
-  // Default configuration options of the Nuxt module
-  setup(options, nuxt) {
+  setup() {
     const resolver = createResolver(import.meta.url);
 
     // Add component

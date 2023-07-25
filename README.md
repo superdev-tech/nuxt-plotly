@@ -20,6 +20,71 @@
 - 🚀 &nbsp; Data reactivity
 - 🏝️ &nbsp; TypeScript support
 
+Sure! Here's the updated Markdown with the improvements:
+
+## Type Aliases
+
+These type aliases simplify the usage of Plotly types in your Nuxt project:
+
+```typescript
+/**
+ * Represents an array of Plotly data objects.
+ */
+export type NuxtPlotlyData = Array<Plotly.Data>;
+
+/**
+ * Represents a partial configuration object for Plotly charts.
+ */
+export type NuxtPlotlyConfig = Partial<Plotly.Config>;
+
+/**
+ * Represents a partial layout object for Plotly charts.
+ */
+export type NuxtPlotlyLayout = Partial<Plotly.Layout>;
+
+/**
+ * Represents a partial HTML element that holds a rendered Plotly chart.
+ */
+export type NuxtPlotlyHTMLElement = Partial<Plotly.PlotlyHTMLElement>;
+```
+
+With these type aliases, you can easily work with Plotly data, configurations, layouts, and HTML elements in your Nuxt application, enhancing your experience when creating interactive charts and visualizations.
+
+## Plotly Event listeners
+
+You can access [Plotly events](https://plotly.com/javascript/plotlyjs-events) using the `@on-ready` directive to receive the `PlotlyHTMLElement` object from the `<nuxt-plotly>` component.
+
+- HTML template example
+
+```html
+<template>
+  <client-only>
+    <nuxt-plotly
+      :data="data"
+      :layout="layout"
+      :config="config"
+      @on-ready="myChartOnReady"
+    ></nuxt-plotly>
+  </client-only>
+</template>
+```
+
+- After receiving the PlotlyHTMLElement, you can access Plotly events
+
+```typescript
+function myChartOnReady(plotlyHTMLElement: NuxtPlotlyHTMLElement) {
+  console.log({ plotlyHTMLElement });
+
+  plotlyHTMLElement.on?.("plotly_afterplot", function () {
+    console.log("done plotting");
+  });
+
+  plotlyHTMLElement.on?.("plotly_click", function () {
+    alert("You clicked this Plotly chart!");
+  });
+}
+```
+
 ## Require client-side
 
 There are two ways to use the `nuxt-plotly` module on the client-side in Nuxt3:

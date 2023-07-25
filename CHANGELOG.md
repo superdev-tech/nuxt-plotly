@@ -1,20 +1,7 @@
-## v1.0.5
+## Updated
 
-[compare changes](https://undefined/undefined/compare/v1.0.4...v1.0.5)
-
-## v1.0.4
-
-[compare changes](https://undefined/undefined/compare/v1.0.3...v1.0.4)
-
-## v1.0.3
-
-[compare changes](https://undefined/undefined/compare/v1.0.2...v1.0.3)
-
-## v1.0.2
-
-[compare changes](https://undefined/undefined/compare/v1.0.1...v1.0.2)
-
-## v1.0.1
+- Update playgroud test redraw when prop changes
+- Add emit `on-ready` for return `PlotlyHTMLElement` object, You can access [plotly-event](https://plotly.com/javascript/plotlyjs-events) from the parent
 
 ## Require
 

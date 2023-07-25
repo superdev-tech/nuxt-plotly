@@ -14,6 +14,7 @@ import Plotly from "plotly.js-dist-min";
 export type NuxtPlotlyData = Array<Plotly.Data>;
 export type NuxtPlotlyConfig = Partial<Plotly.Config>;
 export type NuxtPlotlyLayout = Partial<Plotly.Layout>;
+export type NuxtPlotlyHTMLElement = Partial<Plotly.PlotlyHTMLElement>;
 
 export default defineComponent({
   props: {
@@ -29,27 +30,33 @@ export default defineComponent({
       default: undefined,
     },
   },
-  setup(props) {
+  emits: ["on-ready"],
+  setup(props, ctx) {
     const datas = reactive({
       plotlyId: `plotly-${uuidv4()}`,
       resizeObserver: {} as ResizeObserver,
       timeOutFunctionId: {} as NodeJS.Timeout,
+      plotlyHTMLElement: {} as NuxtPlotlyHTMLElement,
     });
 
-    // set plotlyId when running on client-side
-    // if (process.client) {
-    //   datas.plotlyId = `plotly-${uuidv4()}`;
-    // }
+    const setGraph = async () => {
+      datas.plotlyHTMLElement = await Plotly.newPlot(
+        datas.plotlyId,
+        props.data,
+        props.layout,
+        props.config
+      );
 
-    const setGraph = () => {
-      Plotly.newPlot(datas.plotlyId, props.data, props.layout, props.config);
+      ctx.emit("on-ready", datas.plotlyHTMLElement);
     };
 
     const setResizeObserver = () => {
       datas.resizeObserver = new ResizeObserver(() => {
         // debounce the reset
         clearTimeout(datas.timeOutFunctionId);
-        datas.timeOutFunctionId = setTimeout(setGraph, 100);
+        datas.timeOutFunctionId = setTimeout(() => {
+          setGraph();
+        }, 100);
       });
       const plotlyElm = document.getElementById(datas.plotlyId);
       if (plotlyElm) {
@@ -68,7 +75,8 @@ export default defineComponent({
       () => [props.data, props.layout, props.config],
       () => {
         setGraph();
-      }
+      },
+      { deep: true }
     );
 
     onBeforeUnmount(() => {
