@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="256" src="nuxt-plotly-logo.svg" alt="nuxt-plotly logo">
+</p>
+<br/>
+
 # Nuxt Plotly Module
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -178,4 +183,4 @@ npm run release
 [license-src]: https://img.shields.io/npm/l/nuxt-plotly.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/nuxt-plotly
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
-[nuxt-href]: https://nuxt.com
+[nuxt-href]: https://nuxt.com/modules/nuxt-plotly
