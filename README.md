@@ -4,26 +4,15 @@
   </a>
 </p>
 <br/>
-
 <p align="center">
-  <a href="https://pinia.vuejs.org" target="_blank" rel="noopener noreferrer">
-    <img width="180" src="https://pinia.vuejs.org/logo.svg" alt="Pinia logo">
-  </a>
-</p>
-<br/>
-<p align="center">
-  <a href="https://npmjs.com/package/pinia"><img src="https://badgen.net/npm/v/pinia" alt="npm package"></a>
-  <a href="https://github.com/vuejs/pinia/actions/workflows/test.yml?query=branch%3Av2"><img src="https://github.com/vuejs/pinia/workflows/test/badge.svg?branch=v2" alt="build status"></a>
-  <a href="https://codecov.io/github/vuejs/pinia"><img src="https://badgen.net/codecov/c/github/vuejs/pinia/v2" alt="code coverage"></a>
+  <a href="https://npmjs.com/package/nuxt-plotly"><img src="https://img.shields.io/npm/v/nuxt-plotly/latest.svg?style=flat&colorA=18181B&colorB=28CF8D" alt="npm version"></a>
+  <a href="https://npmjs.com/package/nuxt-plotly"><img src="https://img.shields.io/npm/dm/nuxt-plotly.svg?style=flat&colorA=18181B&colorB=28CF8D" alt="npm download"></a>
+  <a href="https://github.com/superdev-tech/nuxt-plotly/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/nuxt-plotly.svg?style=flat&colorA=18181B&colorB=28CF8D" alt="MIT license"></a>
+  <a href="https://nuxt.com/modules/nuxt-plotly"><img src="https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js" alt="nuxt-plotly module on nuxt official"></a>
 </p>
 <br/>
 
 # Nuxt Plotly Module
-
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-[![Nuxt][nuxt-src]][nuxt-href]
 
 📊 `nuxt-plotly` module is thin Nuxt3 wrapper for [plotly.js](https://plotly.com/javascript/)
 
@@ -188,14 +177,3 @@ npm run test:watch
 # Release new version
 npm run release
 ```
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-plotly/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/nuxt-plotly
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-plotly.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/nuxt-plotly
-[license-src]: https://img.shields.io/npm/l/nuxt-plotly.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-plotly
-[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
-[nuxt-href]: https://nuxt.com/modules/nuxt-plotly
