@@ -1,3 +1,7 @@
+## v1.0.10
+
+[compare changes](https://undefined/undefined/compare/v1.0.9...v1.0.10)
+
 ## v1.0.9
 
 [compare changes](https://undefined/undefined/compare/v1.0.8...v1.0.9)
