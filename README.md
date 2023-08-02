@@ -82,7 +82,7 @@ There are two ways to use the `nuxt-plotly` module on the client-side in Nuxt3:
 </client-only>
 ```
 
-2. Create a file with the `.client.vue` extension, for example, `PlotlyPieChart.client.vue` and then you can use the component without the `<client-only>` tag.
+2. Create a file with the `.client.vue` extension, for example, [PieChart.client.vue](https://github.com/superdev-tech/nuxt-plotly/blob/main/playground/components/PieChart.client.vue) and then you can use the component without the `<client-only>` tag.
 
 ## Plotly Event listeners
 
