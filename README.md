@@ -46,6 +46,7 @@ npm install --save-dev nuxt-plotly
 2. Add `nuxt-plotly` to the `modules` section of `nuxt.config.ts`
 
 ```js
+// nuxt.config.js
 export default defineNuxtConfig({
   modules: ["nuxt-plotly"],
 });
@@ -54,6 +55,7 @@ export default defineNuxtConfig({
 3. Add `plotly.js-dist-min` to the `vite.optimizeDeps.include` section of `nuxt.config.ts`
 
 ```js
+// nuxt.config.js
 export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
@@ -117,6 +119,42 @@ function myChartOnReady(plotlyHTMLElement: NuxtPlotlyHTMLElement) {
     alert("You clicked this Plotly chart!");
   });
 }
+```
+
+## Plotly Functions
+
+To use the [Plotly Function](https://plotly.com/javascript/plotlyjs-function-reference/) in your nuxt project, follow these steps:
+
+- Step 1: Set the `inject` option to `true` in the `nuxt-plotly` module configuration of your `nuxt.config.ts` file.
+
+```js
+// nuxt.config.js
+export default defineNuxtConfig({
+  modules: [["nuxt-plotly", { inject: true }]],
+});
+```
+
+- Step 2: After setting the inject option to true, you can now access the plotly function via `$plotly` in your nuxt project.
+
+```ts
+// app.vue
+
+const { $plotly } = useNuxtApp();
+
+/**
+ * Show all plotly functions
+ */
+console.log($plotly);
+
+/**
+ * Use downloadImage function
+ */
+$plotly.downloadImage(plotlyHTMLElement as HTMLElement, {
+  format: "png",
+  width: 800,
+  height: 600,
+  filename: "newplot",
+});
 ```
 
 ## Type Aliases

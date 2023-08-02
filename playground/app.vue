@@ -16,12 +16,14 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtApp } from "nuxt/app";
 import {
   NuxtPlotlyConfig,
   NuxtPlotlyData,
   NuxtPlotlyLayout,
   NuxtPlotlyHTMLElement,
 } from "../src/module";
+import { Root } from "plotly.js-dist-min";
 
 // When you install the nuxt-plotly module please use the following syntax
 // import { NuxtPlotlyConfig, NuxtPlotlyData, NuxtPlotlyLayout } from 'nuxt-plotly'
@@ -38,6 +40,8 @@ const layout: NuxtPlotlyLayout = {
 const config: NuxtPlotlyConfig = { scrollZoom: true, displayModeBar: false };
 
 function myChartOnReady(plotlyHTMLElement: NuxtPlotlyHTMLElement) {
+  const { $plotly } = useNuxtApp();
+  console.log({ $plotly });
   console.log({ plotlyHTMLElement });
 
   plotlyHTMLElement.on?.("plotly_afterplot", function () {
@@ -46,6 +50,14 @@ function myChartOnReady(plotlyHTMLElement: NuxtPlotlyHTMLElement) {
 
   plotlyHTMLElement.on?.("plotly_click", function () {
     alert("You clicked this Plotly chart!");
+
+    // use plotly function via `$plotly` to download chart image
+    $plotly.downloadImage(plotlyHTMLElement as HTMLElement, {
+      format: "png",
+      width: 800,
+      height: 600,
+      filename: "newplot",
+    });
   });
 }
 </script>

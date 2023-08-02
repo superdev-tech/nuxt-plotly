@@ -1,4 +1,9 @@
-import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
+import {
+  defineNuxtModule,
+  createResolver,
+  addComponent,
+  addPlugin,
+} from "@nuxt/kit";
 import { name, version } from "../package.json";
 export type {
   NuxtPlotlyData,
@@ -7,7 +12,14 @@ export type {
   NuxtPlotlyHTMLElement,
 } from "./runtime/components/nuxt-plotly";
 
-export default defineNuxtModule({
+export interface ModuleOptions {
+  inject: boolean;
+}
+
+export default defineNuxtModule<ModuleOptions>({
+  defaults: () => ({
+    inject: false,
+  }),
   meta: {
     name,
     version,
@@ -16,7 +28,7 @@ export default defineNuxtModule({
       nuxt: "^3.6.0",
     },
   },
-  setup() {
+  setup(options) {
     const resolver = createResolver(import.meta.url);
 
     // Add component
@@ -24,5 +36,10 @@ export default defineNuxtModule({
       name: "NuxtPlotly",
       filePath: resolver.resolve("./runtime/components/nuxt-plotly"),
     });
+
+    // Add runtime plugin
+    if (options.inject) {
+      addPlugin({ src: resolver.resolve("./runtime/plugin"), mode: "client" });
+    }
   },
 });
