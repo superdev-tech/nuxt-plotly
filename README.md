@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/superdev-tech/nuxt-plotly" target="_blank" rel="noopener noreferrer">
-    <img style="max-width:400px; width:100%" src="https://raw.githubusercontent.com/superdev-tech/nuxt-plotly/main/nuxt-plotly-logo.svg" alt="nuxt-plotly logo">
+    <img style="width:400px" src="https://raw.githubusercontent.com/superdev-tech/nuxt-plotly/main/nuxt-plotly-logo.svg" alt="nuxt-plotly logo">
   </a>
 </p>
 <br/>
