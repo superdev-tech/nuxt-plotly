@@ -48,7 +48,16 @@ npm install --save-dev nuxt-plotly
 ```js
 // nuxt.config.js
 export default defineNuxtConfig({
+  /**
+   * Add nuxt-plotly module
+   */
   modules: ["nuxt-plotly"],
+
+  /**
+   * Add nuxt-plotly module with options
+   * Set the inject option to true to use plotly function via $plotly
+   */
+  // modules: [["nuxt-plotly", { inject: true }]],
 });
 ```
 
