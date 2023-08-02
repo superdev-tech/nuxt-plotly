@@ -23,7 +23,6 @@ import {
   NuxtPlotlyLayout,
   NuxtPlotlyHTMLElement,
 } from "../src/module";
-import { Root } from "plotly.js-dist-min";
 
 // When you install the nuxt-plotly module please use the following syntax
 // import { NuxtPlotlyConfig, NuxtPlotlyData, NuxtPlotlyLayout } from 'nuxt-plotly'
