@@ -1,3 +1,7 @@
+## v1.0.11
+
+[compare changes](https://undefined/undefined/compare/v1.0.10...v1.0.11)
+
 ## Updated
 
 - Add nuxt plugin `$plotly`
