@@ -33,14 +33,7 @@
 1. Add `nuxt-plotly` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D nuxt-plotly
-
-# Using yarn
-yarn add --dev nuxt-plotly
-
-# Using npm
-npm install --save-dev nuxt-plotly
+npx nuxi@latest module add nuxt-plotly
 ```
 
 2. Add `nuxt-plotly` to the `modules` section of `nuxt.config.ts`
