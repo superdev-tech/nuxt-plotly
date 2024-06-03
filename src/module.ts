@@ -35,6 +35,7 @@ export default defineNuxtModule<ModuleOptions>({
     addComponent({
       name: "NuxtPlotly",
       filePath: resolver.resolve("./runtime/components/nuxt-plotly"),
+      mode: "client",
     });
 
     // Add runtime plugin
