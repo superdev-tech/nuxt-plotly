@@ -1,6 +1,6 @@
 {
   "name": "nuxt-plotly",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "nuxt-plotly module is thin Nuxt3 wrapper for plotly.js",
   "repository": "superdev-tech/nuxt-plotly",
   "author": "Supanut Dokmaithong",

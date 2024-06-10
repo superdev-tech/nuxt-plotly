@@ -1,3 +1,19 @@
+## v1.0.14
+
+[compare changes](https://undefined/undefined/compare/v1.0.13...v1.0.14)
+
+### 📖 Documentation
+
+- Use new `nuxi module add` command in installation (1be925d)
+
+### 🏡 Chore
+
+- Test bundler module resolution (33ce203)
+
+### ❤️  Contributors
+
+- Daniel Roe ([@danielroe](http://github.com/danielroe))
+
 ## v1.0.13
 
 [compare changes](https://undefined/undefined/compare/v1.0.12...v1.0.13)
