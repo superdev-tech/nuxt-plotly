@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     version,
     configKey: "nuxtPlotly",
     compatibility: {
-      nuxt: "^3.6.0",
+      nuxt: ">=3.6.0",
     },
   },
   setup(options) {
