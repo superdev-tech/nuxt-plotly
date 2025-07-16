@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     version,
     configKey: "nuxtPlotly",
     compatibility: {
-      nuxt: ">=3.6.0",
+      nuxt: "^3.12.3",
     },
   },
   setup(options) {
@@ -35,7 +35,6 @@ export default defineNuxtModule<ModuleOptions>({
     addComponent({
       name: "NuxtPlotly",
       filePath: resolver.resolve("./runtime/components/nuxt-plotly"),
-      mode: "client",
     });
 
     // Add runtime plugin

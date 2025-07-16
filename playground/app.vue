@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { useNuxtApp } from "nuxt/app";
-import {
+import type {
   NuxtPlotlyConfig,
   NuxtPlotlyData,
   NuxtPlotlyLayout,
